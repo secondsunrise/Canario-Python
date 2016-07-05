@@ -1,74 +1,63 @@
-Canary-Python
-=============
+# Canario-Python
+**Canario-Python** is a small library, written in Python, that you can integrate into an existing application. It is used to interact with the Canario API.
 
-Canary-Python is a library that you can drop into your existing Python application's directory which will permit one to 
-integrate the Canary API in a Pythonic-way.
+## Requirements
+- [Python 2.7+][0]
+- [Requests][1]
+- [API Key from Canario][2]
 
-Requirements
-------------
+## Usage
+Getting started with **Canario-Python** is straightforward and simple. Import the library and then set your API key. 
 
-* Python 2.6+
-* [Requests](http://docs.python-requests.org/en/latest/)
-* An API key from Canary itself.
+```python
+from canario import api
+c = api.Canario(api_key="YOUR_API_KEY_HERE")
+```
 
-This should work just fine under any OS that runs Python.
+## Test
+Test your API key to make sure you can successfully interact with the Canario API.
+> **NOTE**: The "test" action isn't documented as it is only provided by [Canario](https://canar.io/help/api/#help_action_overview) for testing purposes.
 
-Using
------
+```python
+c.test()
+```
 
-Getting started is pretty straightforward. It's just matter of importing it and then setting your API key.
+## Search
+Searches via **Canario-Python** can be performed as shown below. The syntax used for searches is the exact same syntax documented on the [Canario website][3]. Search results will be displayed in the same manner as discussed in the [API documentation][4].
 
-    >>> from canary import framework
-    >>> c = framework.canary(api_key='5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8')
+```python
+c.search("!host gmail.com")
+```
 
-Using the above example, any function executed thereafter will populate the received data in the *c.data* variable. 
-Bear in mind that any actions made using the framework will overwrite the data. This will be changed in the future.
+## View
+**Canario-Python** can be used to view the details of a specific result. It retrieves this information by using a *reference ID* as shown below. More information about viewing results can be found [here][5].
 
-Output data will match what is provided in the [documentation](https://canary.pw/help/api/).
+```python
+c.view("9898fa737bdbbf056cbb4cb9fdb20b4c")
+```
 
-### Search
-
-To perform a search, you can perform the following:
-
-    >>> c.search('hacked')
-
-Queries can be done just like the web interface including the bang operators. More information can be found 
-[here](https://canary.pw/help/#using).
-
-Search results will be just like the documentation linked to has shown.
-
-### Viewing
-
-To view a document, you'll need a valid *reference* ID from either the website via the 'item' argument or from a 
-search result done within the search function.
-
-It can be done as follows:
-
-    >>> c.view('7e1619922171a48696e2cf2ebe314bee')
-
-Data will appear as what is stated in the documentation.
-
-### Storing
-
-Users who are community members can upload data to the Canary database using the store function. This feature is not 
-documented as it is not a feature typical to the average user.
+## Store
+Users who are community members can upload data to the Canario database using the store function. 
+> **NOTE**: This feature is not documented as it is not a feature typical to the average user.
 
 The following information is required in order to upload into the database:
 
-* Document's title
-* Document's data (body)
+* Document title
+* Document data (body)
 * Source of the document (predefined by the community)
 * Source URL of the document
 
-It can then be pushed to the database using the following:
+It can then be pushed to the database using the following command:
 
-    >>> c.store(title='My title', text='My text', source='mysource', source_url='https://mysource/1.txt')
+```python
+c.store(title="My title", text="My text", source="mysource", source_url="https://mysource/1.txt")
+```
 
 It will return an output that lets you know if it is successful or not.
 
-Changelog
----------
-
-### Version 0.1 (June 23, 2014)
-
-* First version
+[0]: https://www.python.org/downloads/
+[1]: http://docs.python-requests.org/en/master/user/quickstart/
+[2]: https://canar.io/register/
+[3]: https://canar.io/help/#help_using
+[4]: https://canar.io/help/api/#help_action_search
+[5]: https://canar.io/help/api/#help_action_view
