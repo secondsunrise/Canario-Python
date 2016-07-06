@@ -1,5 +1,5 @@
-# Canario-Python
-**Canario-Python** is a small library, written in Python, that is used to interact with the Canario API.
+# pycanario
+**pycanario** is a small library, written in Python, that is used to interact with the Canario API.
 
 ## Requirements
 - [Python 2.7+][0]
@@ -7,11 +7,14 @@
 - [API Key from Canario][2]
 
 ## Usage
-Getting started with **Canario-Python** is straightforward and simple. Import the library and then set your API key. 
+Getting started with **pycanario** is straightforward and simple. Just import the library, set your API key in `__init__.py`, and you're good to go. 
 
 ```python
-from canario import api
-c = api.Canario(api_key="YOUR_API_KEY_HERE")
+import pycanario
+```
+`__init__.py`
+```python
+api_key = "YOUR_API_KEY"
 ```
 
 ## Test
@@ -19,21 +22,21 @@ Test your API key to make sure you can successfully interact with the Canario AP
 > **NOTE**: The "test" action isn't documented as it is only provided by [Canario](https://canar.io/help/api/#help_action_overview) for testing purposes.
 
 ```python
-c.test()
+print pycanario.test()
 ```
 
 ## Search
-Searches via **Canario-Python** can be performed as shown below. The syntax used for searches is the exact same syntax documented on the [Canario website][3]. Search results will be displayed in the same manner as discussed in the [API documentation][4].
+Searches via **pycanario** can be performed as shown below. The syntax used for searches is the exact same syntax documented on the [Canario website][3]. Search results will be displayed in the same manner as discussed in the [API documentation][4].
 
 ```python
-c.search("!host gmail.com")
+print pycanario.search("!host gmail.com")
 ```
 
 ## View
-**Canario-Python** can be used to view the details of a specific result. It retrieves this information by using a *reference ID* as shown below. More information about viewing results can be found [here][5].
+**pycanario** can be used to view the details of a specific result. It retrieves this information by using a *reference ID* as shown below. More information about viewing results can be found [here][5].
 
 ```python
-c.view("9898fa737bdbbf056cbb4cb9fdb20b4c")
+print pycanario.view("9898fa737bdbbf056cbb4cb9fdb20b4c")
 ```
 
 ## Store
@@ -50,7 +53,7 @@ The following information is required in order to upload into the database:
 It can then be pushed to the database using the following command:
 
 ```python
-c.store(title="My title", text="My text", source="mysource", source_url="https://mysource/1.txt")
+print pycanario.store(title="My title", text="My text", source="mysource", source_url="https://mysource/1.txt")
 ```
 
 It will return an output that lets you know if it is successful or not.
