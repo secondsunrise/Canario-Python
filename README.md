@@ -12,8 +12,8 @@ Getting started with **pycanario** is straightforward and simple. Just import th
 ```python
 import pycanario
 ```
-`__init__.py`
 ```python
+__init__.py
 api_key = "YOUR_API_KEY"
 ```
 
