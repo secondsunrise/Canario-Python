@@ -12,10 +12,6 @@ Getting started with **pycanario** is straightforward and simple. Just import th
 ```python
 import pycanario
 ```
-```python
-__init__.py
-api_key = "YOUR_API_KEY"
-```
 
 ## Test
 Test your API key to make sure you can successfully interact with the Canario API.
