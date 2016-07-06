@@ -1,5 +1,5 @@
 # Canario-Python
-**Canario-Python** is a small library, written in Python, that you can integrate into an existing application. It is used to interact with the Canario API.
+**Canario-Python** is a small library, written in Python, that is used to interact with the Canario API.
 
 ## Requirements
 - [Python 2.7+][0]
