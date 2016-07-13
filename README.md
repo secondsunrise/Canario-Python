@@ -4,6 +4,7 @@
 ## Requirements
 - [Python 2.7+][0]
 - [Requests][1]
+- JSON
 - [API Key from Canario][2]
 
 ## Usage
