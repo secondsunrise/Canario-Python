@@ -35,7 +35,8 @@ def store(title, text, source, source_url):
                "source_url": source_url}
     r = requests.get(api_url, params=payload)
     return r.json()
-    
+
+
 # Return a list of all urls associated with a search
 def get_urls(search):
     referenceids = []
