@@ -54,6 +54,25 @@ print pycanario.store(title="My title", text="My text", source="mysource", sourc
 
 It will return an output that lets you know if it is successful or not.
 
+## Getting all URL's associated with a search
+This function will return a list of URL's associated with the results of a search performed.
+
+```python
+host_amazon = pycanario.search("!host amazon.com")
+print pycanario.get_urls(host_amazon)
+```
+```
+[u'http://pastebin.com/raw.php?i=Ktsb6HaH', u'http://pastebin.com/raw.php?i=h6sumbK6', etc...]
+```
+
+## Write to File
+You can write JSON data to a JSON file utilizing this function. It takes a file name and JSON data as parameters.
+
+```python
+host_amazon = pycanario.search("!host amazon.com")
+pycanario.write_to_file("YOUR_FILENAME", host_amazon)
+```
+
 [0]: https://www.python.org/downloads/
 [1]: http://docs.python-requests.org/en/master/user/quickstart/
 [2]: https://canar.io/register/
